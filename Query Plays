@@ -1,0 +1,8 @@
+select distinct
+  *
+from
+  nightshift.plays
+where
+  ts >= current_date - interval '3' day
+  and platform in ('app-android', 'app-ios')
+  and playback_location = 'direct'
