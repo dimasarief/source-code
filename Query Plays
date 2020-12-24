@@ -1,3 +1,4 @@
+with plays as (
 select distinct
   *
 from
@@ -6,3 +7,15 @@ where
   ts >= current_date - interval '3' day
   and platform in ('app-android', 'app-ios')
   and playback_location = 'direct'
+),
+
+users as (
+select
+  user_id,
+  email,
+  phone,
+  username,
+  display_name
+from
+  users
+)
