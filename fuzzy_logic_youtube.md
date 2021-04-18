@@ -17,24 +17,24 @@ sangat_banyak = 1000000
 # Variabel Linguistik untuk kec.pelayanan
 # lambat, standar, & cepat
 
-if (sikap >= 5.0 and sikap <= 7.5):
+if (5.0 <= sikap <= 7.5):
     uB = (sikap - 5)/(7.5-5.0)
     uKR = (7.5 - sikap)/(7.5-5.0) 
 
-elif (sikap >= 7.5 and sikap <= 10.0):
+elif (7.5 <= sikap <= 10.0):
     uB = (10.0 - sikap)/(10-7.5) 
     uSR = (sikap - 7.5)/(10-7.5)
 
-if (kec_pelayanan >= 4.0 and kec_pelayanan <= 7.0):
+if (4.0 <= kec_pelayanan <= 7.0):
     uL = (7.0 - kec_pelayanan)/(7.0-4.0) 
     uS = (kec_pelayanan - 4.0)/(7.0-4.0)
 
-elif (kec_pelayanan >= 7.0 and kec_pelayanan <= 10.0):
+elif (7.0 <= kec_pelayanan <= 10.0):
     uS = (10.0 - kec_pelayanan)/(10.0-7.0) 
     uC = (kec_pelayanan - 7)/(10.0-7.0)
 
 ############# Inference Systems ###########
-if (sikap >= 5 and sikap <= 7.5) and (kec_pelayanan >= 4 and kec_pelayanan <= 7):
+if (5 <= sikap <= 7.5) and (4 <= kec_pelayanan <= 7):
     uT1 = min(uKR, uL)*(sangat_sedikit)
     uT2 = min(uKR, uS)*(sedikit)
     uT3 = min(uB, uL)*(sedikit)
@@ -48,7 +48,7 @@ if (sikap >= 5 and sikap <= 7.5) and (kec_pelayanan >= 4 and kec_pelayanan <= 7)
     print("a:", a)
     print("b:", b)
 
-elif (sikap >= 5 and sikap <= 7.5) and (kec_pelayanan >= 7 and kec_pelayanan <= 10):
+elif (5 <= sikap <= 7.5) and (7 <= kec_pelayanan <= 10):
     uT1 = min(uKR, uS)*(sedikit)
     uT2 = min(uKR, uC)*(normal)
     uT3 = min(uB, uS)*(normal)
@@ -62,7 +62,7 @@ elif (sikap >= 5 and sikap <= 7.5) and (kec_pelayanan >= 7 and kec_pelayanan <= 
     print("a:", a)
     print("b:", b)
 
-elif (sikap >= 7.5 and sikap <= 10) and (kec_pelayanan >= 4 and kec_pelayanan <= 7):
+elif (7.5 <= sikap <= 10) and (4 <= kec_pelayanan <= 7):
     uT1 = min(uB, uL)*(sedikit)
     uT2 = min(uB, uS)*(normal)
     uT3 = min(uSR, uL)*(normal)
@@ -76,7 +76,7 @@ elif (sikap >= 7.5 and sikap <= 10) and (kec_pelayanan >= 4 and kec_pelayanan <=
     print("a:", a)
     print("b:", b)
 
-elif (sikap >= 7.5 and sikap <= 10) and (kec_pelayanan >= 7 and kec_pelayanan <= 10):
+elif (7.5 <= sikap <= 10) and (7 <= kec_pelayanan <= 10):
     uT1 = min(uB, uS)*(normal)
     uT2 = min(uB, uC)*(banyak)
     uT3 = min(uSR, uS)*(banyak)
